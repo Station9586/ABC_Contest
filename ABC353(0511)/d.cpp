@@ -15,7 +15,7 @@ using namespace std;
 const ll mod = 998244353;
 
 int n;
-ll ans, m, s;
+ll ans, m;
 
 ll power (ll x, ll p) {
     ll ret = 1;
@@ -44,13 +44,16 @@ int main (int argc, const char *argv[]) {
         cnt_10[i] = cnt;
     }
 
+    REP (i, n) {
+        ans += v[i] * i % mod;
+        ans %= mod;
+    }
+
     IFOR (i, 0, n) {
-        ans += v[i] * m + s;
+        ans += v[i] * m;
         ans %= mod;
         m += power(10ll, cnt_10[i]);
         m %= mod;
-        s += v[i];
-        s %= mod;
     }
 
     cout << ans << '\n';
