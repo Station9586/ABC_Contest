@@ -33,7 +33,6 @@ template<typename T> inline T __lg (T __n) { T __k; for (__k = 0; __n != 0; __n 
 using namespace std;
 
 int n;
-map<string, int> mp;
 vector<pair<string, int>> v;
 int main (int argc, const char *argv[]) {
     cin.tie(NULL);
